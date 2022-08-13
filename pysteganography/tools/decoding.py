@@ -1,4 +1,3 @@
-from distutils import text_file
 from PIL import Image
 from tools.translation_tools import binary_to_text
 
@@ -16,18 +15,27 @@ def decode_img(img_path: str) -> str:
         str: The decoded message of the image
     """
     img = Image.open(img_path)
+    width, height = img.size
     binary_message = []
     finished_message, i = False, 0
+    row = 0
 
     while finished_message == False:
         byte = ""
+        i += 1
 
         for z in range(1, 3):
-            pix = list(img.getpixel((i*3+z, 0)))
+            if i*3+z >= width:
+                row += 1
+                i=0
+            pix = list(img.getpixel((i*3+z, row)))
             for j in range(0, 3):
                 byte += decode_pix(pix[j])
 
-        pix = list(img.getpixel((i*3+3, 0)))
+        if i*3+3 >= width:
+                row += 1
+                i=0
+        pix = list(img.getpixel((i*3+3, row)))
         for j in range(0, 2):
             byte += decode_pix(pix[j])
 
@@ -35,6 +43,5 @@ def decode_img(img_path: str) -> str:
             finished_message = True
 
         binary_message.append(byte)
-        i += 1
 
     return binary_to_text(binary_message)

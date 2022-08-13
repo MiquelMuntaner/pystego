@@ -18,10 +18,17 @@ Download all dependencies from the requirements.txt file
 ```
 ## Usage/Examples
 
-To start the program run this command
+To use a simple interface in terminal use the following command
 ```bash
-  python3 pysteganography/pysteganography.py
+  python3 pysteganography/pysteganography.py interface
 ```
+
+Other commands:
+```bash
+  python3 pysteganography/pysteganography.py encode "My secret message" your_image.png
+  python3 pysteganography/pysteganography.py decode your_image.png
+```
+You can use -e in both commands if you want to use AES-256 bit encryption.
 
 
 ## Screenshots
