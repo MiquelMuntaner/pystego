@@ -6,19 +6,19 @@ from bullet import Password
 import os
 
 title = colors.fg.green + """
-  _____        _____ _                                                     _           
- |  __ \      / ____| |                                                   | |          
- | |__) |   _| (___ | |_ ___  __ _  __ _ _ __   ___   __ _ _ __ __ _ _ __ | |__  _   _ 
- |  ___/ | | |\___ \| __/ _ \/ _` |/ _` | '_ \ / _ \ / _` | '__/ _` | '_ \| '_ \| | | |
- | |   | |_| |____) | ||  __/ (_| | (_| | | | | (_) | (_| | | | (_| | |_) | | | | |_| |
- |_|    \__, |_____/ \__\___|\__, |\__,_|_| |_|\___/ \__, |_|  \__,_| .__/|_| |_|\__, |
-         __/ |                __/ |                   __/ |         | |           __/ |
-        |___/                |___/                   |___/          |_|          |___/ """ + colors.reset
+  _____        _____ _                   
+ |  __ \      / ____| |                  
+ | |__) |   _| (___ | |_ ___  __ _  ___  
+ |  ___/ | | |\___ \| __/ _ \/ _` |/ _ \ 
+ | |   | |_| |____) | ||  __/ (_| | (_) |
+ |_|    \__, |_____/ \__\___|\__, |\___/ 
+         __/ |                __/ |      
+        |___/                |___/       """ + colors.reset
 
 def interface_tool():
     os.system('cls' if os.name == 'nt' else 'clear')
     print(title)
-    print(colors.fg.darkgrey, "\nHide encrypted messages in your photos\nMade by Miquel Muntaner\nGithub repository: https://github.com/MiquelMuntaner/pysteganography\n", colors.reset)
+    print(colors.fg.darkgrey, "\nHide encrypted messages in your photos\nMade by Miquel Muntaner\nGithub repository: https://github.com/MiquelMuntaner/pystego\n", colors.reset)
     print("1. encrypt\n2. decrypt")
     option = input("Choose an option (1 or 2): ")
 
